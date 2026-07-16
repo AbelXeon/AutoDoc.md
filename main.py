@@ -6,6 +6,8 @@ from rich.markdown import Markdown
 from rich.prompt import Confirm  # Fixed import
 from core.scanner import CodeScanner
 from core.generator import ReadmeGenerator
+import config 
+
 
 console = Console()
 
@@ -40,6 +42,15 @@ def run():
     # 4. PREVIEW (Fixed the crash here)
     if Confirm.ask("Do you want to preview the result in your terminal?"):
         console.print(Markdown(readme_content))
+
+    api_key = config.get_api_key()
+    if not api_key:
+        console.print("[bold yellow]First time setup![/bold yellow]")
+        api_key = Prompt.ask("Please enter your Groq API Key")
+        config.save_api_key(api_key)
+        # Reload the key into the generator
+        os.environ["GROQ_API_KEY"] = api_key
+
 
 if __name__ == "__main__":
     run()

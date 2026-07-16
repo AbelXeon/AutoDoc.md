@@ -1,4 +1,12 @@
 .env
+.wizard_config
+
 __pycache__/
 venv/
-*.md_generated
+*.py[cod]
+
+dist/
+build/
+*.spec
+
+*.log
