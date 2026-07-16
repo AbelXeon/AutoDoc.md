@@ -2,7 +2,8 @@
 
 # 🧙‍♂️ Wizard: The AI README Architect
 
-**Stop writing documentation. Start weaving masterpieces.**  
+**Stop writing documentation. Start weaving masterpieces.**
+
 *An intelligent CLI tool that scans your codebase and generates high-style, professional READMEs instantly.*
 
 ![Python](https://img.shields.io/badge/python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
@@ -29,55 +30,86 @@ Writing a README is the most boring part of coding. **Wizard** solves this by ac
 
 ## 🗂️ Project Structure
 
+```
 wizard/
 ├── core/
 │   ├── scanner.py      # The "Eyes": Scans and filters your codebase.
 │   └── generator.py    # The "Brain": Crafts the AI prompt and styles.
 ├── main.py             # The "Face": Beautiful terminal interface (Rich).
-├── config.py           # The "Memory": Handles persistent API keys.
+├── config.py            # The "Memory": Handles persistent API keys.
 └── requirements.txt    # The "Gear": Necessary libraries.
+```
 
-🛠️ How It Works
-The Scanner (Eyes): The tool walks through your directory, ignoring "trash" like venv, .git, and __pycache__. It extracts the most important parts of your code.
-The Generator (Brain): It builds a massive prompt including your code context and sends it to the Groq Llama 3.3-70b model.
-The Weaver: The AI returns structured Markdown with badges, tables, and architecture breakdowns, which is then saved as README.md.
+---
 
-🚀 Installation & Developer Setup
+## 🛠️ How It Works
+
+1. **The Scanner (Eyes):** The tool walks through your directory, ignoring "trash" like `venv`, `.git`, and `__pycache__`. It extracts the most important parts of your code.
+2. **The Generator (Brain):** It builds a massive prompt including your code context and sends it to the Groq Llama 3.3-70b model.
+3. **The Weaver:** The AI returns structured Markdown with badges, tables, and architecture breakdowns, which is then saved as `README.md`.
+
+---
+
+## 🚀 Installation & Developer Setup
+
 If you want to customize the Wizard or build your own version:
-1. Clone & Environment
+
+### 1. Clone & Environment
+
+```bash
 git clone https://github.com/AbelXeon/wizard.git
 cd wizard
 python -m venv venv
 source venv/Scripts/activate  # Windows
 pip install -r requirements.txt
+```
 
-2. Customizing the AI Prompt
-You can change the "style" of the generated README by editing core/generator.py. Find the prompt variable and tell the AI exactly how you want it to behave!
+### 2. Customizing the AI Prompt
 
-3. One-Time API Setup
-Run the script:code
+You can change the "style" of the generated README by editing `core/generator.py`. Find the `prompt` variable and tell the AI exactly how you want it to behave!
 
+### 3. One-Time API Setup
+
+Run the script:
+
+```bash
 python main.py .
+```
 
-The Wizard will ask for your Groq API Key. It saves this to ~/.wizard_config so you never have to provide it again.
+The Wizard will ask for your Groq API Key. It saves this to `~/.wizard_config` so you never have to provide it again.
 
-📦 Building the Global EXE
-To use the Wizard like a professional system tool (no python command needed):
-Compile to EXE:
+---
 
+## 📦 Building the Global EXE
 
-pyinstaller --onefile --name wizard main.py
-Make it Global:
-Move dist/wizard.exe to a folder (e.g., C:\MyTools).
-Add C:\MyTools to your Windows System PATH.
-Use it Anywhere:
-Open any folder on your computer and simply type:
+To use the Wizard like a professional system tool (no `python` command needed):
 
+1. **Compile to EXE:**
 
-wizard .
-📝 Notes & Persistence
-Security: Your API key is stored locally in your User profile and is never uploaded.
-Overwrite: Running the Wizard will automatically overwrite your existing README.md—always backup if you have manual notes!
+   ```bash
+   pyinstaller --onefile --name wizard main.py
+   ```
+
+2. **Make it Global:**
+   Move `dist/wizard.exe` to a folder (e.g., `C:\MyTools`).
+   Add `C:\MyTools` to your Windows System PATH.
+
+3. **Use it Anywhere:**
+   Open any folder on your computer and simply type:
+
+   ```bash
+   wizard .
+   ```
+
+---
+
+## 📝 Notes & Persistence
+
+- **Security:** Your API key is stored locally in your User profile and is never uploaded.
+- **Overwrite:** Running the Wizard will automatically overwrite your existing `README.md`—always back up if you have manual notes!
+
+---
+
 <div align="center">
 Created with ❤️ by <b>AbelXeon</b>
 </div>
