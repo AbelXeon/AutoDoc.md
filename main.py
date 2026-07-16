@@ -10,18 +10,25 @@ from core.generator import ReadmeGenerator
 
 console = Console()
 
+
 def run():
     console.clear()
     console.print(Panel.fit("[bold magenta]🧙‍♂️ WIZARD: AI README GENERATOR[/bold magenta]", subtitle="By AbelXeon"))
 
-    # Check for saved API Key
     api_key = config.get_api_key()
     
     if not api_key:
         console.print("[bold yellow]First time setup: No API Key found![/bold yellow]")
-        api_key = Prompt.ask("Please paste your Groq API Key")
+        raw_key = Prompt.ask("Please paste your Groq API Key")
+        
+        if "GROQ_API_KEY=" in raw_key:
+            api_key = raw_key.replace("GROQ_API_KEY=", "").strip()
+        else:
+            api_key = raw_key.strip()
+            
         config.save_api_key(api_key)
-        console.print("[bold green]Key saved successfully! You won't have to enter it again.[/bold green]\n")
+        console.print("[bold green]Key cleaned and saved successfully![/bold green]\n")
+
 
     if len(sys.argv) < 2:
         console.print("[red]❌ Usage: wizard .[/red]")
