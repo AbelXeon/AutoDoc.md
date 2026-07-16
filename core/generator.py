@@ -26,8 +26,9 @@ class ReadmeGenerator:
         Return ONLY the Markdown code. Do not talk.
         """
 
+        # CHANGED MODEL NAME BELOW
         completion = self.client.chat.completions.create(
-            model="llama-3.3-70b-specdec",
+            model="llama-3.3-70b-versatile", 
             messages=[{"role": "user", "content": prompt}]
         )
         return completion.choices[0].message.content
