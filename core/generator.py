@@ -10,7 +10,7 @@ class ReadmeGenerator:
         for f in project_files:
             context += f"\n--- File: {f['path']} ---\n{f['content']}\n"
 
-        # This prompt is now much more "aggressive" about quality and detail
+       
         prompt = f"""
         You are an elite Technical Writer and Software Architect. 
         Write a MASTERPIECE README.md for this project based on the code provided.
