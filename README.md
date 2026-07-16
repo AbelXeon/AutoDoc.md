@@ -1,63 +1,85 @@
-<center>🧙‍♂️ **WIZARD: AI README GENERATOR**</center>
---- 
-### Professional Badges
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code Quality](https://img.shields.io/badge/Code%20Quality-A%2B-blue.svg)](https://www.codacy.com/)
+<div align="center">
 
-### Short Description
-Automatically generate high-quality README files for your projects using AI.
+# 🧙‍♂️ Wizard: The AI README Architect
 
-### ✨ Key Features
+**Stop writing documentation. Start weaving masterpieces.**  
+*An intelligent CLI tool that scans your codebase and generates high-style, professional READMEs instantly.*
+
+![Python](https://img.shields.io/badge/python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
+![Groq](https://img.shields.io/badge/AI-Groq-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge)
+
+</div>
+
+---
+
+## ✨ Why Wizard?
+
+Writing a README is the most boring part of coding. **Wizard** solves this by acting as a Technical Architect. It doesn't just list files; it reads your logic, understands your architecture, and styles your documentation like a 10k-star GitHub repository.
+
 | Feature | Description |
-| --- | --- |
-| AI-Powered | Uses the latest advancements in AI to generate accurate and detailed README files |
-| Customizable | Allows users to provide special instructions for customizing the output |
-| Fast and Efficient | Quickly scans project files and generates a high-quality README file |
+| :--- | :--- |
+| 🧠 **Deep Context** | Scans all `.py`, `.js`, `.html`, and `.css` files to understand your logic. |
+| 🎭 **Custom Persona** | Tell the Wizard to be "Funny," "Professional," or "Minimalist." |
+| 🚀 **Global Access** | Run it from anywhere on your system like `yt-dlp`. |
+| 🛡️ **Zero-Config Key** | Saves your API key locally—enter it once, use it forever. |
 
-### 🗂️ Project Structure
-```markdown
-.
-├── config.py
-├── core
-│   ├── __init__.py
-│   ├── generator.py
-│   └── scanner.py
-├── main.py
-├── requirements.txt
-└── build
-    └── wizard
-        └── xref-wizard.html
-```
+---
 
-### 🚀 Quick Start
-To use the WIZARD, follow these steps:
-```bash
-# Install the required packages
+## 🗂️ Project Structure
+
+```text
+wizard/
+├── core/
+│   ├── scanner.py      # The "Eyes": Scans and filters your codebase.
+│   └── generator.py    # The "Brain": Crafts the AI prompt and styles.
+├── main.py             # The "Face": Beautiful terminal interface (Rich).
+├── config.py           # The "Memory": Handles persistent API keys.
+└── requirements.txt    # The "Gear": Necessary libraries.
+
+🛠️ How It Works
+The Scanner (Eyes): The tool walks through your directory, ignoring "trash" like venv, .git, and __pycache__. It extracts the most important parts of your code.
+The Generator (Brain): It builds a massive prompt including your code context and sends it to the Groq Llama 3.3-70b model.
+The Weaver: The AI returns structured Markdown with badges, tables, and architecture breakdowns, which is then saved as README.md.
+
+🚀 Installation & Developer Setup
+If you want to customize the Wizard or build your own version:
+1. Clone & Environment
+git clone https://github.com/AbelXeon/wizard.git
+cd wizard
+python -m venv venv
+source venv/Scripts/activate  # Windows
 pip install -r requirements.txt
 
-# Run the WIZARD
+2. Customizing the AI Prompt
+You can change the "style" of the generated README by editing core/generator.py. Find the prompt variable and tell the AI exactly how you want it to behave!
+
+3. One-Time API Setup
+Run the script:code
+
 python main.py .
 
-# Follow the prompts to enter your Groq API Key and any special instructions
+The Wizard will ask for your Groq API Key. It saves this to ~/.wizard_config so you never have to provide it again.
+
+📦 Building the Global EXE
+To use the Wizard like a professional system tool (no python command needed):
+Compile to EXE:
+
+
+pyinstaller --onefile --name wizard main.py
+Make it Global:
+Move dist/wizard.exe to a folder (e.g., C:\MyTools).
+Add C:\MyTools to your Windows System PATH.
+Use it Anywhere:
+Open any folder on your computer and simply type:
+
+
+wizard .
+📝 Notes & Persistence
+Security: Your API key is stored locally in your User profile and is never uploaded.
+Overwrite: Running the Wizard will automatically overwrite your existing README.md—always backup if you have manual notes!
+<div align="center">
+Created with ❤️ by <b>AbelXeon</b>
+</div>
 ```
-
-### 🛠️ Detailed Architecture
-The WIZARD consists of the following components:
-* `config.py`: Handles the configuration of the project, including saving and retrieving the Groq API Key.
-* `core/generator.py`: Uses the Groq API to generate the README file based on the project files and user instructions.
-* `core/scanner.py`: Scans the project files and extracts the necessary information to generate the README file.
-* `main.py`: The main entry point of the application, responsible for orchestrating the entire process.
-
-### ⚙️ Configuration
-The WIZARD uses the following environment variables:
-* `GROQ_API_KEY`: Your Groq API Key, which can be saved using the `config.py` module.
-
-### How It Works
-The WIZARD uses a combination of natural language processing (NLP) and machine learning algorithms to generate high-quality README files. Here's a high-level overview of the process:
-1. The user runs the WIZARD and provides the necessary input, including the project directory and any special instructions.
-2. The WIZARD scans the project files using the `core/scanner.py` module, extracting the necessary information to generate the README file.
-3. The WIZARD uses the Groq API to generate the README file based on the project files and user instructions.
-4. The generated README file is then saved to the project directory.
-
-Note: This is a basic overview of how the WIZARD works, and the actual implementation may vary depending on the specific requirements and use cases.
