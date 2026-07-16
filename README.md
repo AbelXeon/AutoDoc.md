@@ -29,7 +29,6 @@ Writing a README is the most boring part of coding. **Wizard** solves this by ac
 
 ## 🗂️ Project Structure
 
-```text
 wizard/
 ├── core/
 │   ├── scanner.py      # The "Eyes": Scans and filters your codebase.
@@ -82,4 +81,3 @@ Overwrite: Running the Wizard will automatically overwrite your existing README.
 <div align="center">
 Created with ❤️ by <b>AbelXeon</b>
 </div>
-```
