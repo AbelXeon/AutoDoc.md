@@ -3,6 +3,7 @@ import os
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
+from rich.prompt import Confirm  # Fixed import
 from core.scanner import CodeScanner
 from core.generator import ReadmeGenerator
 
@@ -25,19 +26,19 @@ def run():
         console.log(f"✅ Found {len(files)} files to analyze.")
 
     # 2. GENERATING
-    with console.status("[bold magenta]Wizard is thinking (AI Generation)...") as status:
+    with console.status("[bold magenta]Wizard is weaving the documentation...[/bold magenta]") as status:
         generator = ReadmeGenerator()
         readme_content = generator.generate(files)
     
-    # 3. SAVING
-    output_path = os.path.join(target_dir, "README_GENERATED.md")
+    # 3. SAVING (Now saves as README.md and overwrites)
+    output_path = os.path.join(target_dir, "README.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(readme_content)
 
-    console.print(Panel(f"[bold green]✨ SUCCESS![/bold green]\nREADME created at: [yellow]{output_path}[/yellow]"))
+    console.print(Panel(f"[bold green]✨ SUCCESS![/bold green]\nREADME updated at: [yellow]{output_path}[/yellow]"))
     
-    # Preview it in terminal
-    if console.confirm("Do you want to preview the README in terminal?"):
+    # 4. PREVIEW (Fixed the crash here)
+    if Confirm.ask("Do you want to preview the result in your terminal?"):
         console.print(Markdown(readme_content))
 
 if __name__ == "__main__":
