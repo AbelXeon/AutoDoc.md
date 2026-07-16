@@ -1,62 +1,63 @@
-<center>🧙‍♂️ **AI README GENERATOR** 🧙‍♂️</center>
-===============================================
+<center>🧙‍♂️ **WIZARD: AI README GENERATOR**</center>
+--- 
+### Professional Badges
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code Quality](https://img.shields.io/badge/Code%20Quality-A%2B-blue.svg)](https://www.codacy.com/)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python: 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub Stars](https://img.shields.io/github/stars/your-username/your-repo-name?style=social)](https://github.com/your-username/your-repo-name)
-
-**Automate your README generation with AI-powered technology!**
-===========================================================
+### Short Description
+Automatically generate high-quality README files for your projects using AI.
 
 ### ✨ Key Features
-
 | Feature | Description |
 | --- | --- |
-| **AI-powered** | Leverages Groq's AI capabilities to generate high-quality READMEs |
-| **Customizable** | Allows for custom prompts and project data to tailor the output |
-| **Easy to use** | Simply run the script and provide a directory to generate a README |
+| AI-Powered | Uses the latest advancements in AI to generate accurate and detailed README files |
+| Customizable | Allows users to provide special instructions for customizing the output |
+| Fast and Efficient | Quickly scans project files and generates a high-quality README file |
 
 ### 🗂️ Project Structure
 ```markdown
 .
+├── config.py
 ├── core
 │   ├── __init__.py
 │   ├── generator.py
 │   └── scanner.py
-├── config.py
 ├── main.py
-└── requirements.txt
+├── requirements.txt
+└── build
+    └── wizard
+        └── xref-wizard.html
 ```
 
 ### 🚀 Quick Start
+To use the WIZARD, follow these steps:
 ```bash
-# Install dependencies
+# Install the required packages
 pip install -r requirements.txt
 
-# Run the script
+# Run the WIZARD
 python main.py .
+
+# Follow the prompts to enter your Groq API Key and any special instructions
 ```
 
 ### 🛠️ Detailed Architecture
-
-The project consists of the following components:
-
-* `config.py`: Loads environment variables, including the Groq API key.
-* `main.py`: Runs the script, scanning the provided directory and generating a README.
-* `core/scanner.py`: Scans the project directory, collecting file data and contents.
-* `core/generator.py`: Uses the Groq API to generate a README based on the collected project data.
+The WIZARD consists of the following components:
+* `config.py`: Handles the configuration of the project, including saving and retrieving the Groq API Key.
+* `core/generator.py`: Uses the Groq API to generate the README file based on the project files and user instructions.
+* `core/scanner.py`: Scans the project files and extracts the necessary information to generate the README file.
+* `main.py`: The main entry point of the application, responsible for orchestrating the entire process.
 
 ### ⚙️ Configuration
+The WIZARD uses the following environment variables:
+* `GROQ_API_KEY`: Your Groq API Key, which can be saved using the `config.py` module.
 
-The following environment variables are required:
+### How It Works
+The WIZARD uses a combination of natural language processing (NLP) and machine learning algorithms to generate high-quality README files. Here's a high-level overview of the process:
+1. The user runs the WIZARD and provides the necessary input, including the project directory and any special instructions.
+2. The WIZARD scans the project files using the `core/scanner.py` module, extracting the necessary information to generate the README file.
+3. The WIZARD uses the Groq API to generate the README file based on the project files and user instructions.
+4. The generated README file is then saved to the project directory.
 
-* `GROQ_API_KEY`: Your Groq API key, loaded from a `.env` file.
-
-### 📚 How It Works
-
-1. **Scanning**: The `CodeScanner` class scans the provided directory, collecting file data and contents.
-2. **Generating**: The `ReadmeGenerator` class uses the Groq API to generate a README based on the collected project data.
-3. **Saving**: The generated README is saved as `README.md` in the provided directory.
-4. **Preview**: The generated README is optionally previewed in the terminal using Rich.
-
-Note: Make sure to replace `your-username` and `your-repo-name` with your actual GitHub username and repository name in the badges.
+Note: This is a basic overview of how the WIZARD works, and the actual implementation may vary depending on the specific requirements and use cases.
