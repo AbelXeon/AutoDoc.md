@@ -7,7 +7,7 @@
 *An intelligent CLI tool that scans your codebase and generates high-style, professional READMEs instantly.*
 
 ![Python](https://img.shields.io/badge/python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)
-![Groq](https://img.shields.io/badge/AI-Groq-orange?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/AI-Gemini-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge)
 
