@@ -45,7 +45,7 @@ wizard/
 ## 🛠️ How It Works
 
 1. **The Scanner (Eyes):** The tool walks through your directory, ignoring "trash" like `venv`, `.git`, and `__pycache__`. It extracts the most important parts of your code.
-2. **The Generator (Brain):** It builds a massive prompt including your code context and sends it to the Groq Llama 3.3-70b model.
+2. **The Generator (Brain):** It builds a massive prompt including your code context and sends it to the Gemini gemini-2.5-flash model.
 3. **The Weaver:** The AI returns structured Markdown with badges, tables, and architecture breakdowns, which is then saved as `README.md`.
 
 ---
@@ -76,7 +76,7 @@ Run the script:
 python main.py .
 ```
 
-The Wizard will ask for your Groq API Key. It saves this to `~/.wizard_config` so you never have to provide it again.
+The Wizard will ask for your Gemini API Key. It saves this to `~/.wizard_config` so you never have to provide it again.
 
 ---
 
