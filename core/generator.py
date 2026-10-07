@@ -1,8 +1,9 @@
-from groq import Groq
+from google import genai
+from google.genai import types
 
 class ReadmeGenerator:
     def __init__(self, api_key):
-        self.client = Groq(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
 
     def generate(self, project_files, user_instruction=""):
         context = ""
@@ -36,9 +37,11 @@ class ReadmeGenerator:
         Return ONLY the Markdown code. No intro/outro text.
         """
 
-        completion = self.client.chat.completions.create(
-            model="llama-3.3-70b-versatile", 
-            messages=[{"role": "system", "content": "You are a Markdown expert. Output ONLY valid Markdown."},
-                      {"role": "user", "content": prompt}]
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction="You are a Markdown expert. Output ONLY valid Markdown."
+            )
         )
-        return completion.choices[0].message.content
+        return response.text

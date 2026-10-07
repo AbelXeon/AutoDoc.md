@@ -10,11 +10,11 @@ def get_api_key():
         try:
             with open(CONFIG_FILE, "r") as f:
                 data = json.load(f)
-                return data.get("GROQ_API_KEY")
+                return data.get("GEMINI_API_KEY")
         except:
             return None
     return None
 
 def save_api_key(api_key):
     with open(CONFIG_FILE, "w") as f:
-        json.dump({"GROQ_API_KEY": api_key}, f)
+        json.dump({"GEMINI_API_KEY": api_key}, f)

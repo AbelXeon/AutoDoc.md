@@ -19,16 +19,15 @@ def run():
     
     if not api_key:
         console.print("[bold yellow]First time setup: No API Key found![/bold yellow]")
-        raw_key = Prompt.ask("Please paste your Groq API Key")
+        raw_key = Prompt.ask("Please paste your Gemini API Key")
         
-        if "GROQ_API_KEY=" in raw_key:
-            api_key = raw_key.replace("GROQ_API_KEY=", "").strip()
+        if "GEMINI_API_KEY=" in raw_key:
+            api_key = raw_key.replace("GEMINI_API_KEY=", "").strip()
         else:
             api_key = raw_key.strip()
             
         config.save_api_key(api_key)
         console.print("[bold green]Key cleaned and saved successfully![/bold green]\n")
-
 
     if len(sys.argv) < 2:
         console.print("[red]❌ Usage: wizard .[/red]")

@@ -1,4 +1,4 @@
-groq
+google-genai
 python-dotenv
 rich
 pyinstaller
